@@ -34,8 +34,8 @@ const userSchema = mongoose.Schema({
     }
 })
 
-/*
-userSchema.pre('save', function(){
+
+userSchema.pre('save', function(next){
     var user = this;
 
     if (user.isModified('password')) {
@@ -54,7 +54,7 @@ userSchema.pre('save', function(){
         next()
     }
 
-})*/
+})
 /*
 userSchema.methods.comparePassword = function(plainPassword, cb) {
     //플레인pw 와 암호화된 pw 같은지 확인
